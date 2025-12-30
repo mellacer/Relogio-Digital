@@ -1,26 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Relogio Digital</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <div class="relogio">
-        <div>
-            <span id="horas">00</span>
-            <span class="tempo">Horas</span>
-        </div>
-        <div>
-            <span id="minutos">00</span>
-            <span class="tempo">Minutos</span>
-        </div>
-        <div>
-            <span id="segundos">00</span>
-            <span class="tempo">Segundos</span>
-        </div>
+      <div>
+        <span id="horas">00</span>
+        <span class="tempo">Horas</span>
+      </div>
+      <div>
+        <span id="minutos">00</span>
+        <span class="tempo">Minutos</span>
+      </div>
+      <div>
+        <span id="segundos">00</span>
+        <span class="tempo">Segundos</span>
+      </div>
     </div>
+
+    <button id="btn-bg">🎨 Personalizar fundo</button>
+
+    <div class="box-bg" id="box-bg">
+      <div class="box-content">
+        <h3>Escolha o fundo</h3>
+
+        <div class="cores">
+          <button
+            data-bg="linear-gradient(0deg, #DAAEED, #FFA9D7, #7DCEF6)"
+          ></button>
+          <button data-bg="linear-gradient(45deg, #ff9a9e, #fad0c4)"></button>
+          <button data-bg="linear-gradient(45deg, #a18cd1, #fbc2eb)"></button>
+          <button data-bg="linear-gradient(45deg, #84fab0, #8fd3f4)"></button>
+        </div>
+
+        <div>
+          <button onclick="corAleatoria()" class="cor-aleatoria">
+            Cor Aleatória
+          </button>
+          <br />
+          <input
+            type="text"
+            placeholder="Nome da cor ou #HEX"
+            class="input-cor"
+          />
+          <button onclick="aplicaCorPersonalizada()">Aplicar Cor</button>
+          <input type="color" onchange="trocaCor(this.value)" />
+          <br />
+          <label>
+            Escolher Imagem
+            <input
+              type="file"
+              accept="image/*"
+              onchange="escolherImagem(this.files[0])"
+            />
+          </label>
+        </div>
+
+        <button class="fechar">Fechar</button>
+      </div>
+    </div>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
